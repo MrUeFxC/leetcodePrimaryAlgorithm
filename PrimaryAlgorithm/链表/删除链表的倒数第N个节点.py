@@ -10,21 +10,20 @@ class Solution(object):
         :type n: int
         :rtype: ListNode
         """
-        current = head
-        listLen = 0
-        while current:
-            listLen += 1
-            current = current.next
         newHead = ListNode(None,head)
-
-        location = listLen - n
-        current = newHead
-        while location >= 0:
-            if location == 0:
-                current.next = current.next.next
+        left = newHead
+        right = newHead
+        while right:
+            if n > 0:
+                right = right.next
+                n -= 1
+                continue
+            if right.next == None:
+                left.next = left.next.next
                 break
-            current = current.next
-            location -= 1
+            right = right.next
+            left = left.next
+
         return newHead.next
 
 
