@@ -29,12 +29,6 @@ class Solution:
         #     ans = max(ans, rk - i + 1)
         # return ans
 
-
-
-
-
-
-
 str = 'dvdf'
 s = Solution()
 result = s.lengthOfLongestSubstring(str)
